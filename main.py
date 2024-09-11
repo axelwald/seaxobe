@@ -31,10 +31,22 @@ def main():
             x = input()
             if x.lower() == "y":
                 print("yes")
+                break
             else:
                 print("no")
                 player += random.randint(1,6)
 
+        while house < player:
+            house += random.randint(1,6)
 
+            if house > 13:
+                print("house has over 13, you win")
+                isRunning = False
+                break
+
+        print(f"House has {house}, house wins")
+        isRunning = False
+
+    
 if __name__ == "__main__":
     main()
